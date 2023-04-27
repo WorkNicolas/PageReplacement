@@ -1,3 +1,8 @@
+/**
+ * Least Recently Used Page Replacement Algorithm
+ * 
+ */
+
 package methods;
 
 import java.util.HashSet;
