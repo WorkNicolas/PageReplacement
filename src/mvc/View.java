@@ -3,10 +3,22 @@ package mvc;
 import java.util.Scanner;
 
 public class View {
-    public View() {
-        System.out.println("");
+
+    /**
+     * Menu
+     * 
+     * @param model
+     */
+    public View(Model model) {
+        model.setPages(input());
     }
 
+    /**
+     * Allows user to create a reference string
+     * e.g. 1 2 3 4 5 6 7 8 9
+     * 
+     * @return
+     */
     private int[] input() {
         System.out.print("Reference String: ");
         int[] value = null;
