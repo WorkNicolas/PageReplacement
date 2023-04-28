@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 public class View {
     private Model model;
+
     /**
      * Menu
      * 
@@ -12,6 +13,7 @@ public class View {
      */
     public View(Model model) {
         this.model = model;
+        //Only one Scanner to prevent java.util.NoSuchElementException
         Scanner sc = new Scanner(System.in);
         //Reference String
         model.setPages(inputReference(sc));
@@ -24,12 +26,11 @@ public class View {
         sc.close();
     }
 
-
-
     /**
      * Allows user to create a reference string
      * e.g. 1 2 3 4 5 6 7 8 9
      * 
+     * @param sc
      * @return model.setPages() setting
      */
     private int[] inputReference(Scanner sc) {
@@ -53,9 +54,11 @@ public class View {
         
         return value;
     }
+
     /**
      * frame size
      * 
+     * @param sc
      * @return model.setFrameSize() setting
      */
     private int inputFrameSize(Scanner sc) {
@@ -76,10 +79,12 @@ public class View {
         
         return value;
     }
+
     /**
      * true - LRU
      * false - FIFO
      * 
+     * @param sc
      * @return model.setAlgo setting
      */
     private boolean inputAlgo(Scanner sc) {
