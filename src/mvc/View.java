@@ -31,7 +31,7 @@ public class View {
         System.out.println("Integer stored " + model.getFrameSize());
         //User input for algorithm used
         model.setAlgo(inputAlgo(sc));
-        System.out.println("Option Stored " + (model.getAlgo() ? "FIFO":"LRU"));
+        System.out.println("Option Stored " + (model.getAlgo() ? "LRU":"FIFO"));
         sc.close();
     }
 
