@@ -35,13 +35,11 @@ public class LruPage {
                     hs.add(pages[i]);
                     pageFault++;
                 }
-                indexMap.put(pages[i], i);
+                indexMap.put(pages[i],i);
             } else {
-                if (hs.contains(pages[i])) {
-                    // finds Least Recently Used frame
+                if (!hs.contains(pages[i])) {
                     int lru = Integer.MAX_VALUE;
-                    int val = 0;
-                    //cannot acquire value from hs w/o itr
+                    int val = Integer.MIN_VALUE;
                     Iterator<Integer> itr = hs.iterator();
                     while (itr.hasNext()) {
                         int temp = itr.next();
@@ -51,9 +49,11 @@ public class LruPage {
                         }
                     }
                     hs.remove(val);
+                    indexMap.remove(val);
                     hs.add(pages[i]);
                     pageFault++;
                 }
+                indexMap.put(pages[i],i);
             }
             frames[i] = hs.toString();
         }
