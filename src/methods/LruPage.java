@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.HashMap;
 
 public class LruPage {
+    private String[] frames;
     public int pageFaults(int pages[], int frameSize) {
         //current pages
         HashSet<Integer> hs = new HashSet<>(frameSize);
@@ -21,6 +22,9 @@ public class LruPage {
          */
         HashMap<Integer, Integer> indexMap = new HashMap<>();
         
+        //stores frames
+        frames = new String[pages.length];
+
         int pageFault = 0;
         //LRU page replacement
         for (int i = 0; i < pages.length; i++) {
@@ -51,7 +55,11 @@ public class LruPage {
                     pageFault++;
                 }
             }
+            frames[i] = hs.toString();
         }
         return pageFault;
+    }
+    public String[] getFrames() {
+        return frames;
     }
 }

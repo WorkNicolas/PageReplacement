@@ -8,12 +8,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class FifoPage {
+    private String[] frames;
     public int pageFaults(int pages[], int frameSize) {
         //current pages
         HashSet<Integer> hs = new HashSet<>(frameSize);
 
         //stores pages using FIFO data structure
         Queue<Integer> indexQ = new LinkedList<>();
+
+        //stores frames
+        frames = new String[pages.length];
 
         int pageFault = 0;
         //FIFO page replacement
@@ -36,7 +40,11 @@ public class FifoPage {
                     pageFault++;
                 }
             }
+            frames[i] += String.valueOf(pages[i]);
         }
         return pageFault;
+    }
+    public String[] getFrames() {
+        return frames;
     }
 }

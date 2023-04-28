@@ -118,4 +118,7 @@ public class View {
         
         return algo;
     }
+    public Model getModel() {
+        return model;
+    }
 }
