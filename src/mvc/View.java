@@ -101,7 +101,7 @@ public class View {
         boolean algo = false;
         
         while (!exit) {
-            System.out.print("Input Option [1 - FIFO, 2- LRU]: ");
+            System.out.print("Input Option [1 - FIFO, 2 - LRU]: ");
             try {
                 int in = -1;
                 if (sc.hasNextInt()) {
