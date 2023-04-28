@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class FifoPage {
+public class FifoPage {
     public int pageFaults(int pages[], int frameSize) {
         //current pages
         HashSet<Integer> hs = new HashSet<>(frameSize);

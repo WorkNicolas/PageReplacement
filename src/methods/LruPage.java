@@ -51,7 +51,7 @@ public class LruPage {
                     pageFault++;
                 }
             }
-            return pageFault;
         }
+        return pageFault;
     }
 }
