@@ -1,5 +1,11 @@
+/**
+ * Controller Architecture
+ * CLI-Based Controls
+ * 
+ * @author WorkNicolas
+ * @version 2023-04-28
+ */
 package mvc;
-
 public class Controller {
     private Model model;
     private View view;

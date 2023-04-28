@@ -1,3 +1,10 @@
+/**
+ * Model Architecture
+ * 
+ * @author WorkNicolas
+ * @version 2023-04-28
+ */
+
 package mvc;
 import java.util.Queue;
 import java.util.LinkedList;

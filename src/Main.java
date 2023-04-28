@@ -1,3 +1,10 @@
+/**
+ * Main file for running the program
+ * 
+ * @author WorkNicolas
+ * @version 2023-04-28
+ */
+
 import java.util.Arrays;
 import mvc.Model;
 import mvc.View;
@@ -19,6 +26,7 @@ public class Main {
         model = ctrl.getView().getModel();
         // Acquire Page Fault
         int pf = -1;
+        //Initialize page replacement algorithms
         String[] frames = new String[model.getPages().length];
         if (!model.getAlgo()) {
             pf = fp.pageFaults(
@@ -33,13 +41,26 @@ public class Main {
             );
             frames = lp.getFrames();
         }
+        // Final Output
         System.out.println("Reference String " + Arrays.toString(model.getPages()));
         System.out.println("Frames " + model.getFrameSize());
         System.out.println("Page Faults " + pf);
+        
+        /**
+         * Table
+         * 
+         * Note that the table is displayed vertically
+         * instead of horizontally like the ITE 005
+         * assignment
+         */
+        StringBuilder sb = new StringBuilder();
         System.out.println("Reference String | Frames");
         for (int i = 0; i < model.getPages().length; i++) {
-            System.out.print(model.getPages()[i] + " ");
-            System.out.print(frames);
+            System.out.print(model.getPages()[i] + "| ");
+            frames[i] = frames[i].replace("[", "").replace("]", "").replace(",", "");
+            sb = new StringBuilder(frames[i]);
+            sb = sb.reverse();
+            System.out.print(sb.toString());
             System.out.println();
         }
         

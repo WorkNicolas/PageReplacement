@@ -1,3 +1,11 @@
+/**
+ * View Architecture
+ * CLI-Based Menu
+ * 
+ * @author WorkNicolas
+ * @version 2023-04-28
+ */
+
 package mvc;
 
 import java.util.Scanner;

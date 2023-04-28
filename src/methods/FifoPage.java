@@ -40,7 +40,7 @@ public class FifoPage {
                     pageFault++;
                 }
             }
-            frames[i] += String.valueOf(pages[i]);
+            frames[i] = hs.toString();
         }
         return pageFault;
     }
