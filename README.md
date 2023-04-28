@@ -21,7 +21,9 @@ Reference String [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
 Frames 4
 
 Page Faults 7
+
 <br>
+
 Reference String | Frames
 
 7| 7
