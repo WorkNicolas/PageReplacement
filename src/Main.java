@@ -54,7 +54,7 @@ public class Main {
          * assignment
          */
         StringBuilder sb = new StringBuilder();
-        System.out.println("Reference String | Frames");
+        System.out.println("\nReference String | Frames");
         for (int i = 0; i < model.getPages().length; i++) {
             System.out.print(model.getPages()[i] + "| ");
             frames[i] = frames[i].replace("[", "").replace("]", "").replace(",", "");
