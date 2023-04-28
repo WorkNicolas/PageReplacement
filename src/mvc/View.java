@@ -23,6 +23,7 @@ public class View {
         System.out.println("Integer stored " + model.getFrameSize());
         //User input for algorithm used
         model.setAlgo(inputAlgo(sc));
+        System.out.println("Option Stored " + (model.getAlgo() ? "FIFO":"LRU"));
         sc.close();
     }
 
@@ -92,6 +93,7 @@ public class View {
         boolean algo = false;
         
         while (!exit) {
+            System.out.print("Input Option [1 - FIFO, 2- LRU]: ");
             try {
                 int in = -1;
                 if (sc.hasNextInt()) {
